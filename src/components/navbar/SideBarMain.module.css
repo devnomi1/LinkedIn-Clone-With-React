@@ -1,0 +1,41 @@
+.sidebar {
+	background: #fff;
+	width:380px;
+	height: calc(100vh - 60px);
+	max-height: 100vh;
+	border-radius: 0.6rem 0 0 0.6rem;
+	position: fixed;
+	top: 59px;
+	right: 0px;
+	z-index: 30;
+	transform: translate(380px);
+	transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+	
+	padding-bottom: 32px;
+	overflow: auto;
+	
+	
+	
+}
+.active{
+	transform: translate(0);
+	transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+}
+
+.sidebar_content {
+	display: block;
+	margin-top: 48px;
+	min-height: 5.6rem;
+	padding: 1.6rem 1.6rem;
+	flex: 1 0;
+}
+	
+	
+.close_btn{
+	top: 14px;
+	right: 5px;
+}
+.close_btn:hover{
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 20px;
+}
