@@ -1,4 +1,4 @@
-import React, { sticky } from "react";
+import React from "react";
 import LeftSideCard1 from "./LeftSideCard1";
 import LeftSideCard2 from "./LeftSideCard2";
 

@@ -5,12 +5,14 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import './index.css';
 import './responsive.css'
 import App from './App';
+import { BrowserRouter} from "react-router-dom";
+
 
 
 ReactDOM.render(
-  <>
+  <BrowserRouter>
     <App />
-  </>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

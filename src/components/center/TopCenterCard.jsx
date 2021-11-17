@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import ModalCard from "./ModalCard";
+import { Link } from "react-router-dom";
 
 function TopCenterCard(props) {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,11 +18,11 @@ function TopCenterCard(props) {
 			<div>
 				<div className="share-box">
 					<div className="post-entry-box">
-						<a href="#">
+						<Link to="/">
 							<div className="profile-picture">
 								<img src={profileimage} alt="" />
 							</div>
-						</a>
+						</Link>
 						<button className="" onClick={modalIsOpenHandler}>
 							<span>Start a post</span>
 						</button>
@@ -67,7 +68,7 @@ function TopCenterCard(props) {
 							</button>
 						</span>
 						<span>
-							<a className="status-bar-btns" href="#">
+							<Link className="status-bar-btns" to="/">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
@@ -83,10 +84,10 @@ function TopCenterCard(props) {
 									></path>
 								</svg>
 								<span>Event</span>
-							</a>
+							</Link>
 						</span>
 						<span>
-							<a className="status-bar-btns" href="#">
+							<Link className="status-bar-btns" to="/">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
@@ -102,7 +103,7 @@ function TopCenterCard(props) {
 									></path>
 								</svg>
 								<span className="t-normal">Write article</span>
-							</a>
+							</Link>
 						</span>
 					</div>
 				</div>

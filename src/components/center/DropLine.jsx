@@ -1,4 +1,5 @@
 import style from "./DropLine.module.css";
+import { Link } from "react-router-dom";
 
 function DropLine(props) {
 	return (
@@ -19,10 +20,10 @@ function DropLine(props) {
 				</button>
 				{props.isOpen ? (
 					<div className={style.dropdwon_sort_top}>
-						<a className={style.active} href="#">
+						<Link className={style.active} to="/">
 							Top
-						</a>
-						<a href="#">Recent</a>
+						</Link>
+						<Link to="/">Recent</Link>
 					</div>
 				) : (
 					props.isOpen

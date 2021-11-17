@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import brandlogo from "../../images/brand.svg";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import searchicon from "../../imgaes/search.svg";
@@ -24,9 +25,9 @@ function handleWorkClick() {
 		<div>
 			<header className={style.navbar}>
 				<div className={style.nav_content}>
-					<a className={style.nav_branding}>
+					<Link to="/" className={style.nav_branding}>
 						<img src={brandlogo} alt="" />
-					</a>
+					</Link>
 
 					<div className={style.search_bar}>
 						<div className={style.search_typeahead}>
@@ -67,9 +68,9 @@ function handleWorkClick() {
 					<nav>
 						<ul className={style.navbar_right}>
 							<li className={style.nav_item}>
-								<a
+								<Link
 									className={`${style.nav_item_link} ${style.active}`}
-									href="#"
+									to="/"
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -86,10 +87,10 @@ function handleWorkClick() {
 									<span className={`${style.nav_text} ${style.active}`}>
 										Home
 									</span>
-								</a>
+								</Link>
 							</li>
 							<li className={style.nav_item}>
-								<a className={style.nav_item_link} href="">
+								<Link className={style.nav_item_link} to="/">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -103,10 +104,10 @@ function handleWorkClick() {
 										<path d="M12 16v6H3v-6a3 3 0 013-3h3a3 3 0 013 3zm5.5-3A3.5 3.5 0 1014 9.5a3.5 3.5 0 003.5 3.5zm1 2h-2a2.5 2.5 0 00-2.5 2.5V22h7v-4.5a2.5 2.5 0 00-2.5-2.5zM7.5 2A4.5 4.5 0 1012 6.5 4.49 4.49 0 007.5 2z" />
 									</svg>
 									<span className={style.nav_text}>My Network</span>
-								</a>
+								</Link>
 							</li>
 							<li className={style.nav_item}>
-								<a className={style.nav_item_link} href="">
+								<Link className={style.nav_item_link} to="/">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -120,10 +121,10 @@ function handleWorkClick() {
 										<path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z" />
 									</svg>
 									<span className={style.nav_text}>Jobs</span>
-								</a>
+								</Link>
 							</li>
 							<li className={`${style.nav_item} hide-msg-top-nav`}>
-								<a className={style.nav_item_link} href="">
+								<Link className={style.nav_item_link} to="/">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -137,10 +138,10 @@ function handleWorkClick() {
 										<path d="M16 4H8a7 7 0 000 14h4v4l8.16-5.39A6.78 6.78 0 0023 11a7 7 0 00-7-7zm-8 8.25A1.25 1.25 0 119.25 11 1.25 1.25 0 018 12.25zm4 0A1.25 1.25 0 1113.25 11 1.25 1.25 0 0112 12.25zm4 0A1.25 1.25 0 1117.25 11 1.25 1.25 0 0116 12.25z" />
 									</svg>
 									<span className={style.nav_text}>Messaging</span>
-								</a>
+								</Link>
 							</li>
 							<li className={`${style.nav_item} hide-notify-top-nav`}>
-								<a className={style.nav_item_link} href="">
+								<Link className={style.nav_item_link} to="/">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -154,7 +155,7 @@ function handleWorkClick() {
 										<path d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z" />
 									</svg>
 									<span className={style.nav_text}>Notifications</span>
-								</a>
+								</Link>
 							</li>
 							<li className={`${style.nav_item} hide-profile-top-nav`}>
 								<button
@@ -210,12 +211,12 @@ function handleWorkClick() {
 							</li>
 							<li className={style.hide_premium_top_nav}>
 								<div className="">
-									<a
+									<Link
 										className={`${style.nav_item_link} ${style.premium}`}
-										href="#"
+										to="/"
 									>
 										Try Premium for free
-									</a>
+									</Link>
 								</div>
 							</li>
 							<div className="position"></div>
@@ -226,41 +227,41 @@ function handleWorkClick() {
 
 						<ul className={`${style.hidden_icons} icons`}>
 							<li className="hide-msg">
-								<a href="">
+								<Link to="/">
 									<span className={style.nav_icon}>
 										<i className="fas fa-comment-dots fa-2"></i>
 									</span>
-								</a>
+								</Link>
 							</li>
 							<li className="hide-notify">
-								<a href="">
+								<Link to="/">
 									<span className={style.nav_icon}>
 										<i className="fas fa-bell fa-2"></i>
 									</span>
-								</a>
+								</Link>
 							</li>
 							<li className="hide-profile">
-								<a href="">
+								<Link to="/">
 									<img
 										className={style.navbar_icons}
 										style={{ borderRadius: "100%" }}
 										src="imgaes/myprofilejpeg.jpeg"
 										alt=""
 									/>
-								</a>
+								</Link>
 							</li>
 
 							<li className="hide-work">
-								<a href="">
+								<Link to="/">
 									<img
 										className={style.navbar_icons}
 										src="imgaes/apps.svg"
 										alt=""
 									/>
-								</a>
+								</Link>
 							</li>
 							<li className={style.premium}>
-								<a href="#">Try Premium for free</a>
+								<Link to="/">Try Premium for free</Link>
 							</li>
 						</ul>
 					</nav>

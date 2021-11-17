@@ -2,11 +2,12 @@ import React from "react";
 import style from "./LeftSideCard1.module.css";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import itemicon from '../../images/itemIcon.svg'
+import { Link } from "react-router-dom";
 
 function LeftSideCard1() {
 	return (
 		<div className={`${style.card_1} d-flex flex-column mb-2 `}>
-			<a className={style.display_picture}>
+			<Link to="/" className={style.display_picture}>
 				<div className={style.background_img}></div>
 				<div className={style.pro_img}>
 					<img
@@ -17,7 +18,7 @@ function LeftSideCard1() {
 				</div>
 
 				<div className={`${style.dp_name} mt-5 pt-2 text-center`}>Nouman Ijaz</div>
-			</a>
+			</Link>
 			<p className={style.dp_info}>
 				Internee Engineer at Descon Engineering Limited
 			</p>
@@ -31,7 +32,7 @@ function LeftSideCard1() {
 					<p className={`${style.blue} m-0 py-1`}>40</p>
 				</div>
 			</div>
-			<a className={`border-top  ${style.linked}`}>
+			<Link to="/" className={`border-top  ${style.linked}`}>
 				<p className={`m-0 text-start ${style.normal_t}`}>
 					Access exclusive tools & nsights
 				</p>
@@ -57,16 +58,16 @@ function LeftSideCard1() {
 
 					<p className={`${style.skill} m-0`}>Learn New Skills with Premium</p>
 				</div>
-			</a>
-			<a
+			</Link>
+			<Link
 				className={`border-top d-flex align-items-center ${style.linked}`}
-				href="/"
+				to="/"
 			>
 				<div>
 				<img src={itemicon} alt="" />
 				</div>
 				<div className={style.my_item}>My item</div>
-			</a>
+			</Link>
 		</div>
 	);
 }

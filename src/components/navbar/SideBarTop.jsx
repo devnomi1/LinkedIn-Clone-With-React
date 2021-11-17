@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./SideBarTop.module.css";
 
 function SideBar() {
@@ -9,7 +10,7 @@ function SideBar() {
 			</header>
 			<ul className={`${style.global_nav_products} p-2 d-flex flex-wrap`}>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a className={`${style.global_nav_product_icon_link}`}>
+					<Link to="/" className={`${style.global_nav_product_icon_link}`}>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 40 40"
@@ -55,10 +56,10 @@ function SideBar() {
 						<span className={`${style.t_12_text} d-block`} title="Post a job">
 							Post a job
 						</span>
-					</a>
+				</Link>
 				</li>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a
+					<Link to="/"
 						className={`${style.global_nav_product_icon_link}`}
 					>
 						<svg
@@ -118,10 +119,10 @@ function SideBar() {
 						<span className={`${style.t_12_text} d-block`} title="Learning">
 							Learning
 						</span>
-					</a>
+				</Link>
 				</li>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a
+					<Link to="/"
 						className={`${style.global_nav_product_icon_link}`}
 					>
 						<svg
@@ -159,10 +160,10 @@ function SideBar() {
 						<span className={`${style.t_12_text} d-block`} title="Insights">
 							Insights
 						</span>
-					</a>
+				</Link>
 				</li>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a
+					<Link to="/"
 						className={`${style.global_nav_product_icon_link}`}
 					>
 						<svg
@@ -210,10 +211,10 @@ function SideBar() {
 						<span className={`${style.t_12_text} d-block`} title="Advertise">
 							Advertise
 						</span>
-					</a>
+				</Link>
 				</li>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a
+					<Link to="/"
 						className={`${style.global_nav_product_icon_link} d-flex flex-column align-items-center`}
 					>
 						<svg
@@ -258,10 +259,10 @@ function SideBar() {
 						<span className={`${style.t_12_text} d-block`} title="Find Leads">
 							Find Leads
 						</span>
-					</a>
+				</Link>
 				</li>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a
+					<Link to="/"
 						className={`${style.global_nav_product_icon_link} d-flex flex-column align-items-center`}
 					>
 						<svg
@@ -309,10 +310,10 @@ function SideBar() {
 						<span className={`${style.t_12_text} d-block`} title="Groups">
 							Groups
 						</span>
-					</a>
+				</Link>
 				</li>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a
+					<Link to="/"
 						className={`${style.global_nav_product_icon_link} d-flex flex-column align-items-center justify-content-center`}
 					>
 						<svg
@@ -342,10 +343,10 @@ function SideBar() {
 						>
 							Services Marketplace
 						</span>
-					</a>
+				</Link>
 				</li>
 				<li className={`${style.global_nav_product} mb-2 pt-1 text-center`}>
-					<a
+					<Link to="/"
 						className={`${style.global_nav_product_icon_link}`}
 					>
 						<svg
@@ -420,7 +421,7 @@ function SideBar() {
 						<span className={`${style.t_12_text} d-block`} title="Salary">
 							Salary
 						</span>
-					</a>
+				</Link>
 				</li>
 			</ul>
 		</section>

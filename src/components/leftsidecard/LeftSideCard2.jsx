@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import InnerCard from "./InnerCard";
 
 import style from "./LeftSideCard2.module.css";
@@ -6,7 +7,7 @@ import style from "./LeftSideCard2.module.css";
 function LeftSideCard2() {
 	const [isOpen, setIsOpen] = useState(true);
 	const [isShow, setIsShow] = useState(true);
-	const [sticky, setSticky] = useState(false)
+	
 	function toggleHandler() {
 		setIsOpen(!isOpen);
 	}
@@ -42,19 +43,19 @@ function LeftSideCard2() {
 						{isOpen ? <InnerCard /> : isOpen}
 					</div>
 					<div className={style.left_card_links}>
-						<a href="#">Groups</a>
-						<a href="#">
+						<Link to="/">Groups</Link>
+						<Link to="/">
 							Event
 							<span>
 								<i className="fas fa-plus"></i>
 							</span>
-						</a>
+						</Link>
 						<div
 							className={`${style.item} d-flex align-items-center justify-content-between`}
 						>
-							<a className={style.item_link} href="#">
+							<Link className={style.item_link} to="/">
 								Followed Hashtags
-							</a>
+							</Link>
 							<span className={style.down_btn} onClick={toggle1Handler}>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"

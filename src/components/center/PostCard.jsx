@@ -8,7 +8,7 @@ function PostCard(props) {
 		<div>
 			<div className={style.post_card}>
 				<div className={`${style.post_card_top} d-flex align-items-center`}>
-					<a className="d-flex" href="#">
+					<a className="d-flex" href="/">
 						<div className="post-card-dp me-1">
 							<img src={props.profile} alt="" />
 						</div>

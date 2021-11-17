@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import style from "./RightAsideCard1.module.css"
 
 function RightAsideCard1() {
@@ -32,37 +33,37 @@ function RightAsideCard1() {
 					<div
 						className={`${style.top_crs_subheading} d-flex justify-content-between mt-1`}
 					>
-						<a href="#">
+						<Link to="/">
 							<div className={style.large_text}>
 								1. Customer Services Foundations
 							</div>
 							<div className={`${style.small_text} text-start pt-1 ps-3`}>Seth Godin</div>
-						</a>
+						</Link>
 					</div>
 					{/* -- Subheding of tio course -- */}
 					<div
 						className={`${style.top_crs_subheading} d-flex justify-content-between mt-1`}
 					>
-						<a href="#">
+						<Link to="/">
 							<div className={style.large_text}>2. What is Graphic Design?</div>
 							<div className={`${style.small_text} text-start pt-1 ps-3`}>Sean Adams</div>
-						</a>
+						</Link>
 					</div>
 					{/* -- Subheding of tio course -- */}
 					<div
 						className={`${style.top_crs_subheading} d-flex justify-content-between mt-1`}
 					>
-						<a href="#">
+						<Link to="/">
 							<div className={style.large_text}>3. Agile Foundations</div>
 							<div className={`${style.small_text} text-start pt-1 ps-3`}>Doug Rose</div>
-						</a>
+						</Link>
 					</div>
 
 					<div className={style.top_crs_link}>
-						<a
+						<Link
 							tabIndex="0"
 							target="_blank"
-							href="#"
+							to="/"
 							id="ember1158"
 							className={`${style.top_crs_inner} p-1 d-flex align-items-center`}
 						>
@@ -79,7 +80,7 @@ function RightAsideCard1() {
 							>
 								<path d="M11.45 3L15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"></path>
 							</svg>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

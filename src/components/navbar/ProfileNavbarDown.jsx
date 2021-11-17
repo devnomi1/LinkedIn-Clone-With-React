@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import style from './ProfileNavbarDown.module.css'
 
@@ -25,13 +26,13 @@ function ProfileNavbarDown() {
 						<h5 className="text-start">Account</h5>
 						<ul>
 							<li>
-								<a href="">Setting & Privacy</a>
+								<Link to="/">Setting & Privacy</Link>
 							</li>
 							<li>
-								<a href="">Help</a>
+								<Link to="/">Help</Link>
 							</li>
 							<li>
-								<a href="">Language</a>
+								<Link to="/">Language</Link>
 							</li>
 						</ul>
 					</div>
@@ -41,10 +42,10 @@ function ProfileNavbarDown() {
 						<h5 className="text-start">Manage</h5>
 						<ul>
 							<li>
-								<a href=""> Posts & Activity</a>
+								<Link to="/"> Posts & Activity</Link>
 							</li>
 							<li>
-								<a href="">Job Posting Account</a>
+								<Link to="/">Job Posting Account</Link>
 							</li>
 						</ul>
 					</div>

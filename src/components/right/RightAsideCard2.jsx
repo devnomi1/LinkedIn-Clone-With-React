@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import evergreen from "../../imgaes/evergreen.jpg";
 import style from "./RightSideCard2.module.css";
 function RightAsideCard2() {
@@ -6,45 +7,45 @@ function RightAsideCard2() {
 		<>
 			<div className={style.aside_card_2}>
 				<div className={`${style.img_card} p-0 m-0 text-center`}>
-					<a href="#">
+					<Link to="/">
 						<img src={evergreen} alt="" />
-					</a>
+				</Link>
 				</div>
 				<div className="footer">
 					<ul
 						className={`${style.footer_menu} list-unstyled d-flex flex-wrap align-items-center justify-content-center`}
 					>
 						<li className="d-flex">
-							<a href="#">About</a>
+							<Link to="/">About</Link>
 						</li>
 						<li>
-							<a href="#">Accessibilty</a>
+							<Link to="/">Accessibilty</Link>
 						</li>
 						<li>
-							<a href="#">Help Center</a>
+							<Link to="/">Help Center</Link>
 						</li>
 						<li>
-							<a href="#">
+							<Link to="/">
 								Privacy & Term
 								<i className="fas fa-chevron-down"></i>
-							</a>
+						</Link>
 						</li>
 						<li>
-							<a href="">Ad Choices</a>
+							<Link to="/">Ad Choices</Link>
 						</li>
 						<li>
-							<a href="">Advertising</a>
+							<Link to="/">Advertising</Link>
 						</li>
 						<li>
-							<a href="">
+							<Link to="/">
 								Business Services <i className="fas fa-chevron-down"></i>
-							</a>
+						</Link>
 						</li>
 						<li>
-							<a href="">Get the LinkedIn app</a>
+							<Link to="/">Get the LinkedIn app</Link>
 						</li>
 						<li>
-							<a href="">More</a>
+							<Link to="/">More</Link>
 						</li>
 					</ul>
 					<div className={style.footer_bottom}>

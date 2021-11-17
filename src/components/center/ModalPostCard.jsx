@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import style from "./ModalPostCard.module.css";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import closebtn from "../../images/close.svg";
