@@ -3,30 +3,26 @@ import style from "./ModalPostCard.module.css";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import closebtn from "../../images/close.svg";
 import ModalBottom from "./ModalBottom";
-import { DUMMY_DATA } from "./Center";
 
-function ModalPostCard(props) {
-	const [state, setState] = useState([""]);
-	const [textAreaValue, setTextAreaValue] = useState([""]);
 
-	const postHandler = (e) => {
-		e.preventDefault();
-		const value = setTextAreaValue(e.target.value);
-		setTextAreaValue((prevItem) => {
-			const preValue = [...prevItem , value];
-			
-		});
-	};
+function ModalPostCard(props) { 
+	const [modalBoxDataHolder, setModalBoxDataHolder] = useState("");
+	const [textAreaValue, setTextAreaValue] = useState("");
+		
+
+	
 
 	const changeValueHandler = (e) => {
-		setTextAreaValue(e.target.value);
+	const textArea =	setTextAreaValue(e.target.value);
+		console.log(textArea);
 	};
+		
 
 	const imageReaderHandler = (e) => {
 		const reader = new FileReader();
 		reader.onload = () => {
 			if (reader.readyState === 2) {
-				setState(reader.result);
+				setModalBoxDataHolder(reader.result);
 			}
 		};
 		reader.readAsDataURL(e.target.files[0]);
@@ -73,13 +69,13 @@ function ModalPostCard(props) {
 				></textarea>
 			</div>
 			<div className="overflow-auto" onChange={changeValueHandler}>
-				{state}
+				{modalBoxDataHolder}
 			</div>
 			<ModalBottom
 				onChange={imageReaderHandler}
 				value={textAreaValue}
-				onClick={postHandler}
-			/>
+				/>
+				
 		</div>
 	);
 }
