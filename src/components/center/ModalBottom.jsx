@@ -1,31 +1,32 @@
-import React, { useContext} from "react";
+import React from "react";
+import {Link} from "react-router-dom"
 import comment from "../../images/comment.svg";
 import photoimage from "../../images/image.svg";
 import JobIcon from "../../images/myjob.svg";
-import { MyPostContext } from "../context/MyContext";
 import style from "./ModalPostCard.module.css";
-import {Link} from "react-router-dom"
+
 
 function ModalBottom(props) {
- const postHandler = useContext(MyPostContext)
+ 
 	
 
 	return (
 		<div className="">
 			<ul className="nav ps-3 pe-4 py-3 ">
 				<li className="nav-item" style={{ width: "50px" }}>
-					<Link className="nav-link active" aria-current="page" to="/">
-						<label htmlFor="upload">
-							<img src={photoimage} alt="" />
-						</label>
+					<div className="nav-link active" aria-current="page" >
 						<input
 							className="d-none"
 							type="file"
-							id="upload"
+							id="input"
+							name="image-upload"
 							accept="image/*"
 							onChange={props.onChange}
 						/>
-					</Link>
+						<label htmlFor="input">
+							<img src={photoimage} alt="" />
+						</label>
+					</div>
 				</li>
 				<li className="nav-item">
 					<Link className="nav-link" to="/">
@@ -64,7 +65,7 @@ function ModalBottom(props) {
 					</Link>
 				</li>
 				<li className="nav-item">
-					<Link className="nav-link" href="">
+					<Link className="nav-link" to="/">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -80,7 +81,7 @@ function ModalBottom(props) {
 					</Link>
 				</li>
 				<li className="nav-item">
-					<Link className="nav-link" href="">
+					<Link className="nav-link" to="/">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -96,8 +97,7 @@ function ModalBottom(props) {
 					</Link>
 				</li>
 				<li className="nav-item border-end border-1">
-					{" "}
-					<Link className="nav-link" href="">
+					<Link className="nav-link" to="/">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -113,20 +113,20 @@ function ModalBottom(props) {
 					</Link>
 				</li>
 				<li className="nav-item">
-					<Link className="nav-link d-flex" href="">
+					<Link className="nav-link d-flex" to="/">
 						<img className="me-1" src={comment} alt="" />
 						<p className="m-0 text-dark">Anyone</p>
 					</Link>
 				</li>
 				<li className="nav-item">
-					<Link className="nav-link" href="">
+					<Link className="nav-link" to="/">
 						<button
 							className={
 								props.value
 									? `${style.change_btn} rounded-pill px-4 py-1 text-center`
 									: `${style.post_btn} rounded-pill px-4 py-1 text-center`
 							}
-							onClick={postHandler}
+							onClick={props.onClick}
 							type="submit"
 						>
 							Post

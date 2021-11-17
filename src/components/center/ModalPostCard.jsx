@@ -5,24 +5,38 @@ import closebtn from "../../images/close.svg";
 import ModalBottom from "./ModalBottom";
 
 
-function ModalPostCard(props) { 
-	const [modalBoxDataHolder, setModalBoxDataHolder] = useState("");
+function ModalPostCard(props) {
+	const [dummyData, setDummyData] = useState();
 	const [textAreaValue, setTextAreaValue] = useState("");
-		
-
-	
+	const [modalBoxDataHolder, setModalBoxDataHolder] = useState(
+		"https://www.freeiconspng.com/images/profile-icon-png"
+	);
 
 	const changeValueHandler = (e) => {
-	const textArea =	setTextAreaValue(e.target.value);
-		console.log(textArea);
+		setTextAreaValue(e.target.value);
 	};
-		
+
+
+	const postHandler = (e) => {
+		e.preventDefault();
+		const textValue = setTextAreaValue(e.target.title.value);
+		console.log(
+			"Hello I am here",
+			e,
+			e.target.title,
+			e.target.name,
+			e.target.value
+		);
+		setDummyData([...dummyData, { [e.title]: textValue }]);
+
+		console.log(textValue);
+	};
 
 	const imageReaderHandler = (e) => {
 		const reader = new FileReader();
 		reader.onload = () => {
 			if (reader.readyState === 2) {
-				setModalBoxDataHolder(reader.result);
+				setModalBoxDataHolder({ pics: reader.result });
 			}
 		};
 		reader.readAsDataURL(e.target.files[0]);
@@ -48,11 +62,11 @@ function ModalPostCard(props) {
 					<span className="border border-1 rounded-pill border-dark py-1 px-2">
 						<button className="d-flex justify-content-between align-items-center text-center">
 							<span>
-								<i class="fas fa-globe-asia"></i>
+								<i className="fas fa-globe-asia"></i>
 							</span>
 							<span className="px-2">Anyone</span>
 							<span>
-								<i class="fas fa-sort-down"></i>
+								<i className="fas fa-sort-down"></i>
 							</span>
 						</button>
 					</span>
@@ -61,21 +75,21 @@ function ModalPostCard(props) {
 			<div className="">
 				<textarea
 					className={style.text_area}
-					name=""
+					name="description"
 					id=""
 					value={textAreaValue}
 					placeholder="What do you want to talk about?"
 					onChange={changeValueHandler}
 				></textarea>
 			</div>
-			<div className="overflow-auto" onChange={changeValueHandler}>
-				{modalBoxDataHolder}
+			<div className="overflow-auto" onChange={imageReaderHandler}>
+				<img src={modalBoxDataHolder} alt="" />
 			</div>
 			<ModalBottom
 				onChange={imageReaderHandler}
 				value={textAreaValue}
-				/>
-				
+				onClick={postHandler}
+			/>
 		</div>
 	);
 }
