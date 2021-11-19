@@ -6,7 +6,7 @@ function ModalCard(props) {
 
     return (
 			<div>
-				<ModalPostCard onCancel={props.onCancel} />
+			<ModalPostCard onCancel={props.onCancel} onClick={props.onClick}/>
 				<BackDrop onCancel={props.onCancel} />
 			</div>
 		);

@@ -3,34 +3,20 @@ import style from "./ModalPostCard.module.css";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import closebtn from "../../images/close.svg";
 import ModalBottom from "./ModalBottom";
-
+import { DUMMY_DATA } from "./Center";
 
 function ModalPostCard(props) {
-	const [dummyData, setDummyData] = useState();
+	
 	const [textAreaValue, setTextAreaValue] = useState("");
 	const [modalBoxDataHolder, setModalBoxDataHolder] = useState(
-		"https://www.freeiconspng.com/images/profile-icon-png"
+		// "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
 	);
 
 	const changeValueHandler = (e) => {
 		setTextAreaValue(e.target.value);
 	};
 
-
-	const postHandler = (e) => {
-		e.preventDefault();
-		const textValue = setTextAreaValue(e.target.title.value);
-		console.log(
-			"Hello I am here",
-			e,
-			e.target.title,
-			e.target.name,
-			e.target.value
-		);
-		setDummyData([...dummyData, { [e.title]: textValue }]);
-
-		console.log(textValue);
-	};
+	
 
 	const imageReaderHandler = (e) => {
 		const reader = new FileReader();
@@ -41,6 +27,8 @@ function ModalPostCard(props) {
 		};
 		reader.readAsDataURL(e.target.files[0]);
 	};
+
+
 	return (
 		<div className={`m-auto  ${style.modal_post_card}`}>
 			<div className="d-flex justify-content-between align-items-center text-start  p-2 border-bottom">
@@ -88,7 +76,7 @@ function ModalPostCard(props) {
 			<ModalBottom
 				onChange={imageReaderHandler}
 				value={textAreaValue}
-				onClick={postHandler}
+				onClick={props.onClick}
 			/>
 		</div>
 	);
