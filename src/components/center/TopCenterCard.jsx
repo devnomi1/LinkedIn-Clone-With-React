@@ -108,7 +108,7 @@ function TopCenterCard(props) {
 					</div>
 				</div>
 			</div>
-			{isModalOpen && <ModalCard onCancel={closeModalHander} onClick={props.onClick}/>}
+			{isModalOpen && <ModalCard image={props.image} imageChangeHandler={props.imageChangeHandler} value={props.value} onChange={props.changeTextAreaValue} onCancel={closeModalHander} onClick={props.onClick}/>}
 		</>
 	);
 }

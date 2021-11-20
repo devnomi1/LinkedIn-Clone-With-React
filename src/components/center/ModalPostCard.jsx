@@ -1,34 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./ModalPostCard.module.css";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import closebtn from "../../images/close.svg";
 import ModalBottom from "./ModalBottom";
-import { DUMMY_DATA } from "./Center";
 
 function ModalPostCard(props) {
-	
-	const [textAreaValue, setTextAreaValue] = useState("");
-	const [modalBoxDataHolder, setModalBoxDataHolder] = useState(
-		// "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-	);
-
-	const changeValueHandler = (e) => {
-		setTextAreaValue(e.target.value);
-	};
-
-	
-
-	const imageReaderHandler = (e) => {
-		const reader = new FileReader();
-		reader.onload = () => {
-			if (reader.readyState === 2) {
-				setModalBoxDataHolder({ pics: reader.result });
-			}
-		};
-		reader.readAsDataURL(e.target.files[0]);
-	};
-
-
 	return (
 		<div className={`m-auto  ${style.modal_post_card}`}>
 			<div className="d-flex justify-content-between align-items-center text-start  p-2 border-bottom">
@@ -63,19 +39,18 @@ function ModalPostCard(props) {
 			<div className="">
 				<textarea
 					className={style.text_area}
-					name="description"
-					id=""
-					value={textAreaValue}
+					name={props.value}
+					value={props.value}
 					placeholder="What do you want to talk about?"
-					onChange={changeValueHandler}
+					onChange={props.onChange}
 				></textarea>
 			</div>
-			<div className="overflow-auto" onChange={imageReaderHandler}>
-				<img src={modalBoxDataHolder} alt="" />
+			<div className="overflow-auto " onChange={props.imageChangeHandler}>
+				<img className="img-fluid" src={props.image} alt={props.image} />
 			</div>
 			<ModalBottom
-				onChange={imageReaderHandler}
-				value={textAreaValue}
+				onChange={props.onChange}
+				value={props.value}
 				onClick={props.onClick}
 			/>
 		</div>

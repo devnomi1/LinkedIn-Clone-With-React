@@ -8,8 +8,6 @@ import style from "./ModalPostCard.module.css";
 
 function ModalBottom(props) {
  
-	
-
 	return (
 		<div className="">
 			<ul className="nav ps-3 pe-4 py-3 ">
@@ -29,7 +27,7 @@ function ModalBottom(props) {
 					</div>
 				</li>
 				<li className="nav-item">
-					<Link className="nav-link" to="/">
+					<div className="nav-link">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -41,7 +39,7 @@ function ModalBottom(props) {
 						>
 							<path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-9 12V8l6 4z"></path>
 						</svg>
-					</Link>
+					</div>
 				</li>
 				<li className="nav-item">
 					<Link className="nav-link" to="/">

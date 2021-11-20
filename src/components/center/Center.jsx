@@ -40,30 +40,52 @@ export const DUMMY_DATA = [
 			"Dear girlsss, don't use uber & careem use your own bikeeE Give yourself pick & drop...& chase your dreamssS",
 	},
 ];
-   
 
- console.log(DUMMY_DATA);
 function Center(props) {
 	const [dummyData, setDummyData] = useState(DUMMY_DATA);
-	const [dropLineOpen, setDropLineOpen] = useState(false);
-	
-	
- const postHandler = (e) => {
-		e.preventDefault();
-		// const textValue = setTextAreaValue(e.target.value);
-		console.log("Hello I am here", e.target);
-		setDummyData([...dummyData, { title : "hello ", description: "My Name is Nouman Ijaz"}]);
+	const [textAreaValue, setTextAreaValue] = useState("");
+	const [modalImageHolder, setModalImageHolder] = useState(
+		""
+	);
 
-		
-	};
-	
-	function toggleHandler() {
-		setDropLineOpen(!dropLineOpen);
+	function postHandler(event) {
+		event.preventDefault();
+		setDummyData([
+			...dummyData,
+			{
+				profile: "",
+				title: "Nouman Khan ",
+				image: modalImageHolder,
+				description: textAreaValue,
+			},
+		]);
 	}
+const imageChangeHandler = (e) => {
+	const reader = new FileReader();
+	reader.onload = () => {
+		if (reader.readyState === 2) {
+			setModalImageHolder(reader.result);
+		}
+	};
+	reader.readAsDataURL(e.target.files[0]);
+};
+
+	function changeValueHandler(event) {
+		setTextAreaValue(event.target.value);
+	}
+
+	console.log(dummyData);
 	return (
 		<div>
-			<TopCenterCard onClick={postHandler} />
-			<DropLine isOpen={dropLineOpen} onClick={toggleHandler} />
+			<TopCenterCard
+				onClick={postHandler}
+				value={textAreaValue}
+				changeTextAreaValue={changeValueHandler}
+				image={modalImageHolder}
+				imageChangeHandler={imageChangeHandler}
+
+			/>
+			<DropLine />
 			{dummyData.map((data, index) => (
 				<PostCard
 					key={index}
