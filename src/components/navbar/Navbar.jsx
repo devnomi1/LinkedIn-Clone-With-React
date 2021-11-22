@@ -6,7 +6,7 @@ import searchicon from "../../imgaes/search.svg";
 import ProfileNavbarDown from "./ProfileNavbarDown";
 import style from "./Navbar.module.css";
 import SideBarMain from "./SideBarMain";
-import BackDrop from "../center/BackDrop";
+import BackDrop from "../Center/BackDrop";
 
 function Navbar() {
 	const [profile, setProfile] = useState(false);

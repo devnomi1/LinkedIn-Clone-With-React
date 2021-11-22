@@ -30,7 +30,7 @@ function DropLine(props) {
 						<Link className={style.active} to="/">
 							<button>Top</button>
 						</Link>
-						<Link to="/"><button>Recent</button></Link>
+						<Link to="/"><button onClick={props.onClick}>Recent</button></Link>
 					</div>
 				) : (
 					dropLineOpen

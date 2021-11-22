@@ -2,7 +2,7 @@ import React from "react";
 import style from "./ModalPostCard.module.css";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
 import closebtn from "../../images/close.svg";
-import ModalBottom from "./ModalBottom";
+import ModalBottom from "../Modal/ModalBottom";
 
 function ModalPostCard(props) {
 	return (
@@ -45,11 +45,16 @@ function ModalPostCard(props) {
 					onChange={props.onChange}
 				></textarea>
 			</div>
-			<div className="overflow-auto " onChange={props.imageChangeHandler}>
-				<img className="img-fluid" src={props.image} alt={props.image} />
+			<div className={`${style.upload_image} overflow-auto`}>
+				<img
+					className="img-fluid"
+					src={props.image}
+					alt={props.image}
+					onChange={props.imageChangeHandler}
+				/>
 			</div>
 			<ModalBottom
-				onChange={props.onChange}
+				onChange={props.imageChangeHandler}
 				value={props.value}
 				onClick={props.onClick}
 			/>

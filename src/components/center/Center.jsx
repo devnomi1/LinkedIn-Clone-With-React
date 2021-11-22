@@ -44,9 +44,18 @@ export const DUMMY_DATA = [
 function Center(props) {
 	const [dummyData, setDummyData] = useState(DUMMY_DATA);
 	const [textAreaValue, setTextAreaValue] = useState("");
-	const [modalImageHolder, setModalImageHolder] = useState(
-		""
-	);
+	const [modalImageHolder, setModalImageHolder] = useState("");
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	// useEffect(() => {
+	// 	fetch(
+	// 		https://linkedin-1aa80-default-rtdb.firebaseio.com/,{
+	// 		method:post
+	// 		}}).then(response=>{
+
+	// 	})
+
+	// }])
 
 	function postHandler(event) {
 		event.preventDefault();
@@ -59,22 +68,37 @@ function Center(props) {
 				description: textAreaValue,
 			},
 		]);
+		setTextAreaValue("");
+		setModalImageHolder("");
+		setIsModalOpen(false)
 	}
-const imageChangeHandler = (e) => {
-	const reader = new FileReader();
-	reader.onload = () => {
-		if (reader.readyState === 2) {
-			setModalImageHolder(reader.result);
-		}
+	const imageChangeHandler = (e) => {
+		const reader = new FileReader();
+		reader.onload = () => {
+			if (reader.readyState === 2) {
+				setModalImageHolder(reader.result);
+			}
+		};
+		reader.readAsDataURL(e.target.files[0]);
 	};
-	reader.readAsDataURL(e.target.files[0]);
-};
 
 	function changeValueHandler(event) {
 		setTextAreaValue(event.target.value);
 	}
 
-	console.log(dummyData);
+	function modalIsOpenHandler() {
+		setIsModalOpen(true);
+	}
+
+	function closeModalHander() {
+		setIsModalOpen(false);
+	}
+	function showRecentPost() {
+		setDummyData(dummyData.reverse())
+		
+		console.log(dummyData.reverse());
+	 }
+
 	return (
 		<div>
 			<TopCenterCard
@@ -83,9 +107,11 @@ const imageChangeHandler = (e) => {
 				changeTextAreaValue={changeValueHandler}
 				image={modalImageHolder}
 				imageChangeHandler={imageChangeHandler}
-
+				modalIsOpenHandler={modalIsOpenHandler}
+				isModalOpen={isModalOpen}
+				closeModalHander={closeModalHander}
 			/>
-			<DropLine />
+			<DropLine onClick={showRecentPost} />
 			{dummyData.map((data, index) => (
 				<PostCard
 					key={index}

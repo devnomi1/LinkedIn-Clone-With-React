@@ -1,17 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import profileimage from "../../imgaes/myprofilejpeg.jpeg";
-import ModalCard from "./ModalCard";
+import ModalCard from "../Modal/ModalCard";
 import { Link } from "react-router-dom";
 
 function TopCenterCard(props) {
-	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	function modalIsOpenHandler() {
-		setIsModalOpen(true);
-	}
-	function closeModalHander() {
-		setIsModalOpen(false);
-	}
+
+	
 
 	return (
 		<>
@@ -23,7 +18,7 @@ function TopCenterCard(props) {
 								<img src={profileimage} alt="" />
 							</div>
 						</Link>
-						<button className="" onClick={modalIsOpenHandler}>
+						<button className="" onClick={props.modalIsOpenHandler}>
 							<span>Start a post</span>
 						</button>
 					</div>
@@ -108,7 +103,7 @@ function TopCenterCard(props) {
 					</div>
 				</div>
 			</div>
-			{isModalOpen && <ModalCard image={props.image} imageChangeHandler={props.imageChangeHandler} value={props.value} onChange={props.changeTextAreaValue} onCancel={closeModalHander} onClick={props.onClick}/>}
+			{props.isModalOpen && <ModalCard image={props.image} imageChangeHandler={props.imageChangeHandler} value={props.value} onChange={props.changeTextAreaValue} onCancel={props.closeModalHander} onClick={props.onClick}/>}
 		</>
 	);
 }

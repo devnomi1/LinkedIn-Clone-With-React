@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./ModalPostCard.module.css"
+import style from "../Modal/ModalPostCard.module.css"
 
 function BackDrop(props) {
     return (

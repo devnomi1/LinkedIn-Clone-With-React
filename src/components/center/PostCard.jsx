@@ -8,13 +8,13 @@ function PostCard(props) {
 		<div>
 			<div className={style.post_card}>
 				<div className={`${style.post_card_top} d-flex align-items-center`}>
-					<a className="d-flex" href="/">
+					<a className={`${style.profile_link} d-flex`} href="/">
 						<div className="post-card-dp me-1">
 							<img src={props.profile} alt="" />
 						</div>
 						<div className="d-flex flex-column">
 							<span className="d-flex align-items-center">
-								<span>{props.title}</span>
+								<span className={style.title}>{props.title}</span>
 								<span className="time"> •1st </span>
 							</span>
 							<span className="dp-bio-data"> sofware nework pvt., Ltd. </span>

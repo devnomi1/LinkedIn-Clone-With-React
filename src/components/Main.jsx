@@ -1,7 +1,7 @@
 import React from "react";
-import Center from "./center/Center";
-import LeftAside from "./leftsidecard/LeftAside";
-import RightAside from "./right/RightAside";
+import Center from "./Center/Center";
+import LeftAside from "./Leftsidecards/LeftAside";
+import RightAside from "./Rightsidecards/RightAside";
 
 function Main() {
 	return (
