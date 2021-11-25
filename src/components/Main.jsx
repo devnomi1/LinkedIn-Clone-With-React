@@ -1,19 +1,19 @@
 import React from "react";
-import Center from "./Center/Center";
-import LeftAside from "./Leftsidecards/LeftAside";
-import RightAside from "./Rightsidecards/RightAside";
+import CardsHolderCenter from "./PostCards/CardsHolderCenter";
+import LeftCards from "./Leftsidecards/LeftCards";
+import RightCards from "./Rightsidecards/RightCards";
 
 function Main() {
 	return (
 		<div className="wrapper">
 			<div className="sidebar">
-				<LeftAside />
+				<LeftCards />
 			</div>
 			<div className="main">
-				<Center />
+				<CardsHolderCenter />
 			</div>
 			<div className="aside">
-				<RightAside />
+				<RightCards/>
 			</div>
 		</div>
 	);

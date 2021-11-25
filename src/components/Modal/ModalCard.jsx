@@ -1,5 +1,5 @@
 import React from "react";
-import BackDrop from "../Center/BackDrop"
+import BackDrop from "../PostCards/BackDrop"
 import ModalPostCard from "../Modal/ModalPostCard";
 
 function ModalCard(props) {
